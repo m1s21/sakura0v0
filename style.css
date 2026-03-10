@@ -1,0 +1,106 @@
+/* 字体引入 */
+@import url("https://fontsapi.zeoseven.com/1/main/result.css");
+
+/* 基础重置 & 背景图 */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("m2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "JinzisheTongfang", sans-serif;
+  font-weight: normal;
+}
+
+/* 毛玻璃卡片（保持不变） */
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 10; /* 卡片在中间层 */
+}
+
+/* 头像 */
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(0.5px);
+  -webkit-filter: blur(0.5px);
+}
+
+/* 文字区域 */
+.text-content {
+  color: #000000;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.text-content h2 {
+  font-size: 2.2rem;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.text-content p {
+  font-size: 1.2rem;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.8;
+}
+
+/* ===== 樱花 Canvas 分层样式 ===== */
+/* 后面的 Canvas（卡片下方） */
+#sakuraCanvasBack {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* 鼠标穿透 */
+  z-index: 4; /* 低于卡片 (z-index:10) */
+}
+
+/* 前面的 Canvas（卡片上方） */
+#sakuraCanvasFront {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 11; /* 高于卡片 */
+}
