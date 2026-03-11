@@ -88,6 +88,11 @@ body {
   height: 100%;
   object-fit: cover; /* 覆盖整个方块，可能裁剪 */
   display: block;
+  opacity: 0.5; /* 添加这一行，半透明效果 */
+}
+
+.sub-card:hover img {
+  opacity: 1; /* 新增：悬停时不透明 */
 }
 
 /* 头像（主卡片内）保持不变 */
