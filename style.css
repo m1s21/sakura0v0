@@ -26,7 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px; /* 主卡片与小卡片之间的间距 */
+  gap: 20px; /* 主卡片与小卡片之间的间距（默认，手机端） */
   width: 100%;
   max-width: 600px; /* 限制容器宽度，防止小卡片拉伸过宽 */
   padding: 20px;
@@ -46,7 +46,7 @@ body {
   transition: transform 0.3s ease; /* 悬停动画过渡 */
 }
 
-/* 悬停放大效果 */
+/* 悬停放大效果（所有毛玻璃卡片） */
 .glass-card:hover {
   transform: scale(1.05); /* 放大1.05倍 */
 }
@@ -60,7 +60,6 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* 移除原有的 .glass-card 中的定位，因为容器已经处理 */
 }
 
 /* 三个小卡片容器（水平排列） */
@@ -68,11 +67,11 @@ body {
   display: flex;
   flex-wrap: wrap; /* 手机窄屏时换行 */
   justify-content: center;
-  gap: 15px; /* 卡片间距 */
+  gap: 15px; /* 卡片间距（所有屏幕通用） */
   width: 100%;
 }
 
-/* 方形小卡片 */
+/* 方形小卡片（默认尺寸：100x100，适用于平板/桌面） */
 .sub-card {
   display: block; /* 因为 <a> 需要块级 */
   width: 100px;
@@ -154,10 +153,23 @@ body {
   z-index: 11;
 }
 
-/* 手机窄屏适配：小卡片宽度调整 */
+/* ===== 手机窄屏适配（≤480px）===== */
 @media (max-width: 480px) {
   .sub-card {
     width: 80px;
     height: 80px;
+  }
+}
+
+/* ===== 电脑端适配（≥768px）===== */
+@media (min-width: 768px) {
+  /* 小卡片再小三分之一：从100px → 70px */
+  .sub-card {
+    width: 70px;
+    height: 70px;
+  }
+  /* 增大主卡片与小卡片之间的间距 */
+  .cards-container {
+    gap: 35px; /* 原来20px，增大到35px */
   }
 }
