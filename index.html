@@ -3,21 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ovo</title>
+    <title>毛玻璃卡片 · 三小福</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!-- 后面的樱花 Canvas（在卡片下方） -->
     <canvas id="sakuraCanvasBack"></canvas>
 
-    <!-- 毛玻璃卡片 -->
-    <div class="glass-card">
-      <div class="avatar">
-        <img src="c2.jpg" alt="avatar" />
+    <!-- 主卡片 + 三个小卡片的容器 -->
+    <div class="cards-container">
+      <!-- 主毛玻璃卡片 -->
+      <div class="glass-card main-card">
+        <div class="avatar">
+          <img src="c2.jpg" alt="avatar" />
+        </div>
+        <div class="text-content">
+          <h2>M1sa</h2>
+          <p>欢迎来到我的博客</p>
+        </div>
       </div>
-      <div class="text-content">
-        <h2>M1sa</h2>
-        <p>欢迎来到我的博客</p>
+
+      <!-- 三个方形小毛玻璃卡片 -->
+      <div class="sub-cards">
+        <a
+          href="https://你的链接1.com"
+          class="glass-card sub-card"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="图片1.jpg" alt="card1" />
+        </a>
+        <a
+          href="https://你的链接2.com"
+          class="glass-card sub-card"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="图片2.jpg" alt="card2" />
+        </a>
+        <a
+          href="https://你的链接3.com"
+          class="glass-card sub-card"
+          target="_blank"
+          rel="noopener"
+        >
+          <img src="图片3.jpg" alt="card3" />
+        </a>
       </div>
     </div>
 
